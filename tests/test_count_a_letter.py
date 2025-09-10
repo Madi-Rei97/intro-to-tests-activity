@@ -1,19 +1,18 @@
 from main import count_a_letter
 import pytest
 
-def test_demo_one():
-    num_1 = 8
-    num_2 = 9
+def test_non_alpha_letter_returns_none():
+    test_sentence = "I am testing a function."
+    test_letter = "4"
 
-    result = num_1 + num_2
+    result = count_a_letter(test_sentence, test_letter)
 
-    assert result == 17
+    assert result is None
 
-def test_demo_two():
-    num_1 = 18
-    num_2 = 24
+def test_string_with_no_matches_returns_0():
+    test_sentence = "I am testing a function."
+    test_letter = "z"
 
-    result = num_1 + num_2
+    result = count_a_letter(test_sentence, test_letter)
 
-    assert result == 42
-# Delete the demo tests and add your tests here 
+    assert result is 0
